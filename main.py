@@ -47,9 +47,9 @@ if args.filesystem:
 
     if args.copy:
 
-        print('Copying file ' + args.path + ' to ' + args.copy)
+        print('Copying file ' + args.copy + ' to ' + args.path)
 
-        shutil.copy2(args.path, args.copy)
+        shutil.copy2(args.copy, args.path)
 
     elif args.write:
 
@@ -63,20 +63,20 @@ if args.filesystem:
 
     elif args.print:
 
-        print('Printing contents of file ' + args.path)
+        print('Printing contents of file ' + args.path + ':')
 
         with open(args.path, 'r') as file:
             print(file.read())
 
     elif args.Rename:
 
-        print('Renaming file ' + args.path + ' to ' + args.Rename)
+        print('Renaming file ' + args.Rename + ' to ' + args.path)
 
-        shutil.move(args.path, args.Rename)
+        shutil.move(args.Rename, args.path,)
 
     elif args.touch:
 
-        file = open(args.path, 'w+')
+        file = open(args.path, 'a+')
         file.close()
 
     elif args.delete:
